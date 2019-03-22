@@ -1,0 +1,7 @@
+[package]
+name = "count_cache"
+version = "0.1.0"
+authors = ["Clement Zotti <clement.zotti@imeka.ca>"]
+edition = "2018"
+
+[dependencies]
