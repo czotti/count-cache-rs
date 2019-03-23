@@ -1,19 +1,18 @@
+use std::collections::HashMap;
 use std::hash::Hash;
-use std::collections::{HashMap, hash_map::Entry};
-
 
 pub struct CountCache<K, V> {
     cache: HashMap<K, (V, usize)>,
 }
 
-
-impl<K, V> CountCache<K, V> 
-where K: Clone + Eq + Hash,
-      V: Clone
+impl<K, V> CountCache<K, V>
+where
+    K: Clone + Eq + Hash,
+    V: Clone,
 {
     pub fn new() -> CountCache<K, V> {
         CountCache {
-            cache: HashMap::new()
+            cache: HashMap::new(),
         }
     }
 
@@ -27,14 +26,9 @@ where K: Clone + Eq + Hash,
         }
     }
 
-
-    pub fn has_key(&mut self, key: K) -> bool {
-        match self.cache.entry(key) {
-            Entry::Occupied(_) => true,
-            Entry::Vacant(_) => false,
-        }
+    pub fn contains_key(&mut self, key: &K) -> bool {
+        self.cache.contains_key(key)
     }
-
 
     pub fn get(&mut self, key: &K) -> Result<V, ()> {
         let result = if let Some((value, count)) = self.cache.get_mut(key) {
@@ -48,7 +42,7 @@ where K: Clone + Eq + Hash,
             if *count == 0 {
                 self.cache.remove(key);
             }
-        } 
+        }
         result
     }
 }
@@ -62,7 +56,7 @@ mod tests {
         let mut ccache = CountCache::new();
 
         ccache.insert("test", 10, 2);
-        assert!(ccache.has_key("test"));
+        assert!(ccache.contains_key(&"test"));
         assert_eq!(ccache.get(&"test").expect("Err"), 10);
         ccache.increment(&"test", 1);
         assert_eq!(ccache.get(&"test").expect("Err"), 10);

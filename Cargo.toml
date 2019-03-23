@@ -1,10 +1,12 @@
 [package]
 name = "count_cache"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Clement Zotti <clement.zotti@imeka.ca>"]
 edition = "2018"
 readme = "README.md"
 description = "Counted cache system"
 license = "BSD-2-Clause"
+repository = "https://github.com/czotti/count-cache-rs"
+documentation = "https://github.com/czotti/count-cache-rs"
 
 [dependencies]
