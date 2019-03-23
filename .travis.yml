@@ -7,8 +7,8 @@ language: rust
 rust:
   - stable
   - beta
-  - nigthly
+  - nightly
 script: cargo test
 matrix:
   allow_failures:
-    - rust: nigthly
+    - rust: nightly
