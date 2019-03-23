@@ -1,0 +1,14 @@
+os:
+  - windows
+  - linux
+  - osx
+
+language: rust
+rust:
+  - stable
+  - beta
+  - nigthly
+script: cargo test
+matrix:
+  allow_failures:
+    - rust: nigthly
