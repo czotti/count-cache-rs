@@ -1,5 +1,5 @@
 # Count Cache
- [![Latest Version](http://meritbadge.herokuapp.com/count_cache)](https://crates.io/crates/count_cache) [![Build Status](https://travis-ci.org/czotti/count-cache-rs.svg?branch=master)](https://travis-ci.org/czotti/count-cache-rs) [![Deps](https://deps.rs/repo/github/czotti/count_cache/status.svg)](https://deps.rs/repo/github/czotti/count_cache)
+ [![Latest Version](http://meritbadge.herokuapp.com/count_cache)](https://crates.io/crates/count_cache) [![Build Status](https://travis-ci.org/czotti/count-cache-rs.svg?branch=master)](https://travis-ci.org/czotti/count-cache-rs) [![dependency status](https://deps.rs/repo/github/czotti/count-cache-rs/status.svg)](https://deps.rs/repo/github/czotti/count-cache-rs)
 
 This create provide a simple way to use a counted cache system.
 When the count drop to zero, the cache delete the associated key, and the elements cannot be accessed anymore.
